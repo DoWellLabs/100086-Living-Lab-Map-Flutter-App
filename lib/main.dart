@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:living_labs_maps_api/views/nearby_locations.dart';
+import 'package:living_labs_maps_api/views/home.dart';
 
 void main() {
   runApp(const MyApp());

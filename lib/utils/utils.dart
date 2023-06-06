@@ -1,29 +1,14 @@
+import 'package:flutter/material.dart';
+import 'package:living_labs_maps_api/views/get_nearby_locations.dart';
+import 'package:living_labs_maps_api/views/place_details.dart';
+import 'package:living_labs_maps_api/views/saving_details.dart';
+import 'package:living_labs_maps_api/views/verify_details_view.dart';
+
 /// Created by Patrice Mulindi email(mulindipatrice00@gmail.com) on 6.06.2023.
 
-extension ExtString on String {
-  bool get isValidEmail {
-    final emailRegExp = RegExp(r"^[a-zA-Z0-9.]+@[a-zA-Z0-9]+\.[a-zA-Z]+");
-    return emailRegExp.hasMatch(this);
-  }
-
-  bool get isValidName {
-    final nameRegExp =
-        RegExp(r"^\s*([A-Za-z]{1,}([\.,] |[-']| ))+[A-Za-z]+\.?\s*$");
-    return nameRegExp.hasMatch(this);
-  }
-
-  bool get isValidPassword {
-    final passwordRegExp = RegExp(
-        r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\><*~]).{8,}/pre>');
-    return passwordRegExp.hasMatch(this);
-  }
-
-  // bool get isNotNull {
-  //   return this != null;
-  // }
-
-  bool get isValidPhone {
-    final phoneRegExp = RegExp(r"^\+?0[0-9]{10}$");
-    return phoneRegExp.hasMatch(this);
-  }
-}
+List<Widget> homeScreenItems = [
+  const NearbyLocationsView(),
+  const PlaceDetailsView(),
+  const SavingDetailsView(),
+  const VerifyDetailsView(),
+];
