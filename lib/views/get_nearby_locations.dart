@@ -4,6 +4,8 @@ import 'package:living_labs_maps_api/model/post_nearby_locations.dart';
 import 'package:living_labs_maps_api/network/get_nearby_lacations.dart';
 import 'package:living_labs_maps_api/utils/colors.dart';
 
+/// Created by Patrice Mulindi email(mulindipatrice00@gmail.com) on 6.06.2023.
+
 class NearbyLocationsView extends StatefulWidget {
   const NearbyLocationsView({super.key});
 
@@ -57,9 +59,6 @@ class _NearbyLocationsViewState extends State<NearbyLocationsView> {
     centerLonController.text = '-0.12574';
     queryStringController.text = 'school';
     dataTypeController.text = 'scraped';
-    // if (_formKey.currentState!.validate()) {
-    //   _formKey.currentState!.reset();
-    // }
     await onSubmitPressed();
   }
 

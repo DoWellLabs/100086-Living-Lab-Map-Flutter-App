@@ -24,4 +24,5 @@ class Constants {
 
   static String resultDict = 'result_dict';
   static String successfulRes = 'succesful_results';
+  static String failedResults = 'failed_results';
 }
