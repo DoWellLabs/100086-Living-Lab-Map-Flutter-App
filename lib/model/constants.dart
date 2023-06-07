@@ -12,4 +12,16 @@ class Constants {
   static String placeId = 'placeId';
   static String id = 'place_id';
   static String placeName = 'place_name';
+  //Save details string
+  static String address = 'address';
+  static String dayHours = 'day_hours';
+  static String phone = 'phone';
+  static String website = 'website';
+  static String typeOfData = 'type_of_data';
+  static String isTestData = 'is_test_data';
+  static String error = 'error';
+  static String eventId = 'eventId';
+
+  static String resultDict = 'result_dict';
+  static String successfulRes = 'succesful_results';
 }

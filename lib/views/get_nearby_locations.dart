@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:living_labs_maps_api/model/get_nearby_locations.dart';
 import 'package:living_labs_maps_api/model/post_nearby_locations.dart';
 import 'package:living_labs_maps_api/network/get_nearby_lacations.dart';
+import 'package:living_labs_maps_api/utils/colors.dart';
 
 class NearbyLocationsView extends StatefulWidget {
   const NearbyLocationsView({super.key});
@@ -19,7 +20,12 @@ class _NearbyLocationsViewState extends State<NearbyLocationsView> {
   final TextEditingController queryStringController = TextEditingController();
   final TextEditingController dataTypeController = TextEditingController();
 
+  bool loading = false;
+
   Future<void> onSubmitPressed() async {
+    setState(() {
+      loading = true;
+    });
     if (_formKey.currentState!.validate()) {
       NearbyLocationPost data = NearbyLocationPost(
         radiusOne: int.parse(radiusOneController.text),
@@ -39,6 +45,7 @@ class _NearbyLocationsViewState extends State<NearbyLocationsView> {
             ));
           }
         }
+        loading = false;
       });
     }
   }
@@ -72,22 +79,30 @@ class _NearbyLocationsViewState extends State<NearbyLocationsView> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
-        child: Column(
+        child: Stack(
+          alignment: Alignment.center,
           children: [
-            const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Text(
-                'Get Nearby Locations',
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-              ),
+            Column(
+              children: [
+                const Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Text(
+                    'Get Nearby Locations',
+                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                  ),
+                ),
+                form(),
+                places.isNotEmpty
+                    ? Column(
+                        children: List.generate(places.length,
+                            (index) => placesLayout(places[index])),
+                      )
+                    : const SizedBox()
+              ],
             ),
-            form(),
-            places.isNotEmpty
-                ? Column(
-                    children: List.generate(
-                        places.length, (index) => placesLayout(places[index])),
-                  )
-                : const SizedBox()
+            loading
+                ? const Center(child: CircularProgressIndicator())
+                : const SizedBox(),
           ],
         ),
       ),
@@ -246,26 +261,82 @@ class _NearbyLocationsViewState extends State<NearbyLocationsView> {
           padding: const EdgeInsets.all(8.0),
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            Text('Id: ${data.id}',
-                style:
-                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 24)),
-            // Text('Coordinates: ${data.locationCoordinate}',
+            // Text('Id: ${data.id}',
             //     style:
-            //         const TextStyle(fontWeight: FontWeight.bold, fontSize: 24)),
+            //         const TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+            RichText(
+              text: TextSpan(
+                text: 'Name: ',
+                children: [
+                  TextSpan(
+                      text: data.placeName,
+                      style: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                          color: primaryColor))
+                ],
+                style: const TextStyle(
+                    fontWeight: FontWeight.w400,
+                    fontSize: 18,
+                    color: primaryColor),
+              ),
+            ),
+            RichText(
+              text: TextSpan(
+                text: 'Coordinates: ',
+                children: [
+                  TextSpan(
+                      text: data.locationCoordinate,
+                      style: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                          color: primaryColor))
+                ],
+                style: const TextStyle(
+                    fontWeight: FontWeight.w400,
+                    fontSize: 18,
+                    color: primaryColor),
+              ),
+            ),
 
-            Text('Distance: ${data.haversineDistance}',
-                style:
-                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 24)),
-            // Text('Category: ${data.category}',
-            //     style:
-            //         const TextStyle(fontWeight: FontWeight.bold, fontSize: 24)),
+            RichText(
+              text: TextSpan(
+                text: 'Distance: ',
+                children: [
+                  TextSpan(
+                      text: '${data.haversineDistance}',
+                      style: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                          color: primaryColor))
+                ],
+                style: const TextStyle(
+                    fontWeight: FontWeight.w400,
+                    fontSize: 18,
+                    color: primaryColor),
+              ),
+            ),
+            RichText(
+              text: TextSpan(
+                text: 'Category: ',
+                children: [
+                  TextSpan(
+                      text: data.category.join(', '),
+                      style: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                          color: primaryColor))
+                ],
+                style: const TextStyle(
+                    fontWeight: FontWeight.w400,
+                    fontSize: 18,
+                    color: primaryColor),
+              ),
+            ),
 
             // Text('Place Id: ${data.placeId}',
             //     style:
             //         const TextStyle(fontWeight: FontWeight.bold, fontSize: 24)),
-            Text('Name: ${data.placeName}',
-                style:
-                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 24))
           ]),
         ),
       ),
