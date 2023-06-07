@@ -5,7 +5,7 @@ class SaveDetailsModel {
   final String locationCoordinate;
   final String address;
   final List category;
-  final List dayHours;
+  final dynamic dayHours;
   final String placeName;
   final String phone;
   final String website;
@@ -40,6 +40,32 @@ class SaveDetailsModel {
         Constants.eventId: eventId,
         Constants.error: error,
       };
+
+  factory SaveDetailsModel.fromJson(
+    Map<String, dynamic> json,
+  ) {
+    var eventId = json[Constants.eventId] as List;
+    String dayHours;
+    if (json[Constants.dayHours] is String) {
+      dayHours = json[Constants.dayHours] as String;
+    } else {
+      var dh = json[Constants.dayHours] as List;
+      dayHours = dh.map((e) => '\n$e').join();
+    }
+    return SaveDetailsModel(
+      address: json[Constants.address],
+      category: json[Constants.category],
+      placeName: json[Constants.placeName],
+      phone: json[Constants.phone],
+      website: json[Constants.website],
+      typeOfData: json[Constants.typeOfData],
+      isTestData: json[Constants.isTestData],
+      eventId: eventId.map((e) => e as String).toList(),
+      error: json[Constants.error],
+      locationCoordinate: json[Constants.locationCoordinates],
+      dayHours: dayHours,
+    );
+  }
 }
 
 class PostDetails {
