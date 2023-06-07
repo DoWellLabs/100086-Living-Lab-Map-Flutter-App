@@ -303,7 +303,7 @@ class _NearbyLocationsViewState extends State<NearbyLocationsView> {
                 text: 'Distance: ',
                 children: [
                   TextSpan(
-                      text: '${data.haversineDistance}',
+                      text: '${data.haversineDistance.ceilToDouble()} meters',
                       style: const TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 18,
