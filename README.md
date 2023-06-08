@@ -1,4 +1,4 @@
-# living_labs_maps_api
+# Living Lab Maps API Flutter Implementation
 
 A new Flutter project.
 
