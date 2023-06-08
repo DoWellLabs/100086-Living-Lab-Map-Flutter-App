@@ -3,6 +3,7 @@ import 'package:living_labs_maps_api/model/save_details_model.dart';
 import 'package:living_labs_maps_api/network/get_place_details.dart';
 import 'package:living_labs_maps_api/utils/colors.dart';
 
+/// Created by Patrice Mulindi email(mulindipatrice00@gmail.com) on 7.06.2023.
 class PlaceDetailsView extends StatefulWidget {
   const PlaceDetailsView({super.key});
 
