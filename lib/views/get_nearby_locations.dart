@@ -25,10 +25,10 @@ class _NearbyLocationsViewState extends State<NearbyLocationsView> {
   bool loading = false;
 
   Future<void> onSubmitPressed() async {
-    setState(() {
-      loading = true;
-    });
     if (_formKey.currentState!.validate()) {
+      setState(() {
+        loading = true;
+      });
       NearbyLocationPost data = NearbyLocationPost(
         radiusOne: int.parse(radiusOneController.text),
         radiusTwo: int.parse(radiusTwoController.text),
