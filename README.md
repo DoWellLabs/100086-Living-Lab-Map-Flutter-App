@@ -1,7 +1,6 @@
 # Living Lab Maps API Flutter Demo
 
-A new Flutter project.
-
+A Flutter application developed to demonstrate the use of [Livind Lab Maps API](https://github.com/DoWellUXLab/Living-Lab-Maps).
 ## Getting Started
 
 This project is a starting point for a Flutter application.
