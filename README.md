@@ -177,13 +177,13 @@ Project Link: [https://app.flutterflow.io/share/experiments-v2-bk50u5](https://a
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
+Helpful and would like to give credit to:
 
 * [Choose an Open Source License](https://choosealicense.com)
 * [Img Shields](https://shields.io)
-* [GitHub Pages](https://pages.github.com)
-* [Font Awesome](https://fontawesome.com)
-* [React Icons](https://react-icons.github.io/react-icons/search)
+* [Mockup Maker Editor](https://www.renderforest.com/mockup-maker/new?packId=121&mockupId=1454)
+* [Postman](https://www.postman.com/)
+* [FlutterFlow Community](https://community.flutterflow.io/c/whats-new-in-flutterflow)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
