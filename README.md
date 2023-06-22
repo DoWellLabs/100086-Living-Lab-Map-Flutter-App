@@ -96,21 +96,21 @@ The project leverages the visual programming capabilities of FlutterFlow and the
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
+    
+* Make sure you have Flutter SDK installed on your system. You can download it from the official [Flutter](https://flutter.dev) website.
+* Ensure that you have a compatible version of Dart SDK installed.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+* A few resources to get you started if this is your first Flutter project:
+   - [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
+   - [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+* For help getting started with Flutter development, view the
+  [online documentation](https://docs.flutter.dev/), which offers tutorials,
+  samples, guidance on mobile development, and a full API reference.
 
 ### Installation
+_To set up and run the Flutter project on your machine, please follow these steps:_
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
-
-1. Clone the repo
+1. Clone the project repository<br>  ‧ Using Git or download the project's ZIP file and extract it to a desired location on your   machine.
    ```sh
    git clone https://github.com/DoWellLabs/100086-Living-Lab-Map-Flutter-App.git
    ```
@@ -122,11 +122,12 @@ _Below is an example of how you can instruct your audience on installing and set
    ```sh
    git checkout APIFlutterApp-Mulindi
    ```
-4. Download the packages
+4. Install dependencies
    ```sh
    flutter pub get
    ```
-4. Run the app
+4. Run the app<br >
+   ‧ Connect a physical device or start an emulator/simulator.
    ```sh
    flutter run
    ```
