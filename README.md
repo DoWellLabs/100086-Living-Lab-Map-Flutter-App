@@ -20,7 +20,7 @@
   <h3 align="center">Living Lab Maps API Demo in Flutterflow</h3>
 
   <p align="center">
-    An awesome documentation to provide a seamless integration of the [Living Lab Maps API](https://github.com/DoWellUXLab/Living-Lab-Maps) into Flutter applications.
+    An awesome documentation to provide a seamless integration of the <a href="https://github.com/DoWellUXLab/Living-Lab-Maps">Living Lab Maps API</a> into Flutter applications.
     <br />
     <a href="https://documenter.getpostman.com/view/25619963/2s93mBwJbH"><strong>Explore API postman docs »</strong></a>
     <br />
